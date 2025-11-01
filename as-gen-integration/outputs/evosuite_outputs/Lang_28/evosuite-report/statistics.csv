@@ -1,0 +1,2 @@
+TARGET_CLASS,criterion,Coverage,Total_Goals,Covered_Goals
+org.apache.commons.lang3.text.translate.NumericEntityUnescaper,BRANCH,0.75,16,12

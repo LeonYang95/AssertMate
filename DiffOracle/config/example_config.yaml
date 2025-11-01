@@ -1,0 +1,18 @@
+project:
+  base: "/path/to/the/project"
+  name: "DiffOracle"
+llm:
+  model: "DeepSeek"
+  key: "your api key"
+  api: "https://api.deepseek.com"
+  temperature: 1.0
+  top_p: 0.95
+  max_tokens: 4000
+methods2test:
+  eval: "/path/to/the/dataset/test"
+  source: "/path/to/the/retrieval/source"
+  retrieval_res: "/path/to/the/retrieval/results"
+atlas:
+  eval: "/path/to/the/dataset/test"
+  source: "/path/to/the/retrieval/source"
+  retrieval_res: "/path/to/the/retrieval/results"

@@ -1,10 +1,27 @@
 # AssertMate
-This is an implementation of our ASE 2025 submission: *Multi-Agent Test Assertion Generation via Diverse Perspective Aggregation*.
 
-Currently, the submission is under review, and the code is not yet complete. 
+AssertMate is This is an implementation of *Agent-Based Test Assertion Generation via Diverse
+Perspective Aggregation* and integration with test-generation tools (EvoSuite and others).
 
-In this repository, we provide several details regarding the prompts and prefill mode used for each strategy, including CG, RAG, CoT and Judge. Please refer to the generator classes in `model/agents.py`.
+## Highlights
+- UTGen_LLM: LLM-based unit test generation pipeline to generate unit tests for public Java methods. Dataset and experimental inputs were constructed from Defects4J.
+- DiffOracle: Differential prompting approach for creating LLM-based test oracles.
+- Integration tooling and scripts for EvoSuite execution, test running, and data collection.
 
-The Actual Value Constructor is protected by patent and belongs to our cooperating company, it will be released after internal review.
+## Repository layout
+Top-level folders and a short description of each:
 
-All experimental data will be published after the review process is completed.
+- `as-gen-integration/` — Integration code for assertion generation and related configuration.
+- `DiffOracle/` — Differential prompting and prompt-engineering components for test oracle generation.
+- `UTGen_LLM/` — LLM-based unit test generation project with its own README.
+- `data/` — Datasets and inputs used by experiments.
+- `model/` — Model wrappers, agents and LLM-related utilities.
+
+## Quick start
+1. Install Python 3.10 (recommended) and create a virtual environment.
+2. Install dependencies:
+
+  pip install -r requirements.txt
+
+## Configuration
+- Global or component-specific configuration is stored under each component's `config/` directory and/or `config.py` files. Always copy example configs where indicated and adjust absolute/relative paths before running.
