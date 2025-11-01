@@ -1,6 +1,6 @@
 # AssertMate
 
-AssertMate is This is an implementation of *Agent-Based Test Assertion Generation via Diverse
+AssertMate is an implementation of *Agent-Based Test Assertion Generation via Diverse
 Perspective Aggregation* and integration with test-generation tools (EvoSuite and others).
 
 ## Highlights
@@ -16,6 +16,14 @@ Top-level folders and a short description of each:
 - `UTGen_LLM/` — LLM-based unit test generation project with its own README.
 - `data/` — Datasets and inputs used by experiments.
 - `model/` — Model wrappers, agents and LLM-related utilities.
+
+## Prompt Templates
+
+<img src="assets/CoTA.png" alt="示意图" width="600"/>
+<img src="assets/CGA.png" alt="示意图" width="600"/>
+<img src="assets/RAGA.png" alt="示意图" width="600"/>
+<img src="assets/Judge.png" alt="示意图" width="600"/>
+
 
 ## Quick start
 1. Install Python 3.10 (recommended) and create a virtual environment.
