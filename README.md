@@ -54,3 +54,16 @@ python as_gen_integration/scripts/evosuite_generator.py
 python as_gen_integration/scripts/evosuite_executor.py
 ```
 
+### RQ3
+
+Ablation and agent collaboration experiments.
+
+1. Single-agent experiments: 
+Evaluate each agent (CGA, RAGA, or CoTA) individually.
+
+2. Debate strategy:
+```
+python assert_mate/scripts/Debate.py.
+```
+3. Voting strategy:
+Combine outputs from multiple agents by majority vote; the assertion appearing most frequently among agents is selected.
