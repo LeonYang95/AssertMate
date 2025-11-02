@@ -14,10 +14,10 @@ Top-level folders and a short description of each:
 ## Prompt Templates
 The following figures illustrate the prompt templates used by the four agents in AssertMate, each responsible for a distinct subtask in multi-agent assertion generation.
 
-<img src="assets/CGA.png" alt="示意图" width="600"/>
-<img src="assets/CoTA.png" alt="示意图" width="600"/>
-<img src="assets/RAGA.png" alt="示意图" width="600"/>
-<img src="assets/Judge.png" alt="示意图" width="600"/>
+<img src="assets/CGA.png" alt="示意图" width="800"/>
+<img src="assets/CoTA.png" alt="示意图" width="800"/>
+<img src="assets/RAGA.png" alt="示意图" width="800"/>
+<img src="assets/Judge.png" alt="示意图" width="800"/>
 
 
 ## Quick start
