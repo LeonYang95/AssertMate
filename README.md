@@ -1,26 +1,21 @@
 # AssertMate
 
 AssertMate is an implementation of *Agent-Based Test Assertion Generation via Diverse
-Perspective Aggregation* and integration with test-generation tools (EvoSuite and others).
-
-## Highlights
-- UTGen_LLM: LLM-based unit test generation pipeline to generate unit tests for public Java methods. Dataset and experimental inputs were constructed from Defects4J.
-- DiffOracle: Differential prompting approach for creating LLM-based test oracles.
-- Integration tooling and scripts for EvoSuite execution, test running, and data collection.
+Perspective Aggregation* and integration with test-generation tool, EvoSuite.
 
 ## Repository layout
 Top-level folders and a short description of each:
 
-- `as-gen-integration/` — Integration code for assertion generation and related configuration.
-- `DiffOracle/` — Differential prompting and prompt-engineering components for test oracle generation.
-- `UTGen_LLM/` — LLM-based unit test generation project with its own README.
+- `as-gen-integration/` — Integration tooling and scripts that use EvoSuite to generate tests; includes test-generation, execution helpers, and related configuration.
+- `assert_mate/` — source code to get AssertMate result.
+- `UTGen_LLM/` — Defects4j unit test generation project. 
 - `data/` — Datasets and inputs used by experiments.
-- `model/` — Model wrappers, agents and LLM-related utilities.
 
 ## Prompt Templates
+The following figures illustrate the prompt templates used by the four agents in AssertMate, each responsible for a distinct subtask in multi-agent assertion generation.
 
-<img src="assets/CoTA.png" alt="示意图" width="600"/>
 <img src="assets/CGA.png" alt="示意图" width="600"/>
+<img src="assets/CoTA.png" alt="示意图" width="600"/>
 <img src="assets/RAGA.png" alt="示意图" width="600"/>
 <img src="assets/Judge.png" alt="示意图" width="600"/>
 
@@ -28,8 +23,34 @@ Top-level folders and a short description of each:
 ## Quick start
 1. Install Python 3.10 (recommended) and create a virtual environment.
 2. Install dependencies:
-
+```
   pip install -r requirements.txt
+```
+3. Set up the Defects4J environment following the official guide:
+   https://github.com/rjust/defects4j
+4. Set up Configuration: Global or component-specific configuration is stored under each component's `config/` directory or `config.py` files. Always copy example configs where indicated and adjust absolute/relative paths before running.
 
-## Configuration
-- Global or component-specific configuration is stored under each component's `config/` directory and/or `config.py` files. Always copy example configs where indicated and adjust absolute/relative paths before running.
+
+### RQ1
+1. Generate test cases: 
+```
+python UTGen_LLM/utils/UTMapper.py
+```
+2. Generate assertions using AssertMate use `assert_mate/scripts/first_round_speak_up.py`.
+3. Execute tests:
+```
+python UTGen_LLM/utils/UTExecutor.py
+```
+### RQ2
+
+1. Generate test cases: 
+```
+python as_gen_integration/scripts/evosuite_generator.py
+```
+2. Generate assertions using AssertMate use `assert_mate/scripts/first_round_speak_up.py`. 
+
+3. Execute tests:
+```
+python as_gen_integration/scripts/evosuite_executor.py
+```
+

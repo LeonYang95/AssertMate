@@ -466,16 +466,16 @@ if __name__ == "__main__":
         bug_paths = json.load(r)
 
     print(len(bug_paths.keys()))    
-    # output_writer = open(
-    #     os.path.join(code_base, "outputs/defects4j_inputs_with_candidates_triggering_tests-1.jsonl"),
-    #     "w",
-    #     encoding="utf-8",
-    # )
-    # for bug_id, paths in tqdm(bug_paths.items()):
-    #     jsondicts, _ = process_one_bug_by_triggering_tests(bug_id, paths)
-    #     if not jsondicts:
-    #         continue
-    #     for one_dict in jsondicts:
-    #         output_writer.write(json.dumps(one_dict, ensure_ascii=False) + "\n")
-    # output_writer.close()
-    # pass
+    output_writer = open(
+        os.path.join(code_base, "outputs/defects4j_inputs_with_candidates_triggering_tests-1.jsonl"),
+        "w",
+        encoding="utf-8",
+    )
+    for bug_id, paths in tqdm(bug_paths.items()):
+        jsondicts, _ = process_one_bug_by_triggering_tests(bug_id, paths)
+        if not jsondicts:
+            continue
+        for one_dict in jsondicts:
+            output_writer.write(json.dumps(one_dict, ensure_ascii=False) + "\n")
+    output_writer.close()
+    pass
