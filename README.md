@@ -6,7 +6,7 @@ Perspective Aggregation* and integration with test-generation tool, EvoSuite.
 ## Repository layout
 Top-level folders and a short description of each:
 
-- `as-gen-integration/` — Integration tooling and scripts that use EvoSuite to generate tests; includes test-generation, execution helpers, and related configuration.
+- `as_gen_integration/` — Integration tooling and scripts that use EvoSuite to generate tests; includes test-generation, execution helpers, and related configuration.
 - `assert_mate/` — source code to get AssertMate result.
 - `UTGen_LLM/` — Defects4j unit test generation project. 
 - `data/` — Datasets and inputs used by experiments.
